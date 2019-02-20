@@ -135,7 +135,7 @@ cdn:
 # ---------------
 avatar: /logo.png
 
-top_img: /top-img.jpg # false or url of img
+top_img: https://huevo.oss-cn-shanghai.aliyuncs.com/ian-schneider-66374-unsplash.jpg # false or url of img
 
 post_meta:
   date_type: created # created or updated
