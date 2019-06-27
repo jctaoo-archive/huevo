@@ -1,0 +1,34 @@
+<div class="article-list">
+    <% page.posts.each(function (post) { %>
+        <div class="passage-item back-logo mdui-ripple" onclick="window.location.href = '<%= url_for(post.path) %>'">
+            <div class="passage-item-inner">
+                <div class="passage-top">
+                    <a href="<%- url_for(post.path) %>">
+                        <h1 class="passage-title">
+                            <%= post.title.replace('|', '') %></h1>
+                    </a>
+                    <span class="passage-date">
+                        <% const date = url_for(post.path).split('/').slice(1, 4).join('-') %>
+                        <%= date %>
+                    </span>
+                </div>
+                <div class="passage-item-some">
+                    <div class="pre-content">
+                        <%- post.excerpt %>
+                    </div>
+                    <div class="normal-image pre-img" <%- post.images ? `style="background-image: url('${url_for(post.path + post.images)}')"` : 'style="flex:0"'%>></div>
+                </div>
+                <!--                <div class="passage-achievement">-->
+                <!--                    <span class="read achievement-item">-->
+                <!--                        <img src="/images/观看.png" class="achievement-icon" alt="" />-->
+                <!--                        <span class="sth-count">2.3w</span>-->
+                <!--                    </span>-->
+                <!--                    <span class="chat achievement-item ">-->
+                <!--                        <img src="/images/评论.png" class="achievement-icon" alt="" />-->
+                <!--                        <span class="sth-count">897</span>-->
+                <!--                    </span>-->
+                <!--                </div>-->
+            </div>
+        </div>
+    <% }) %>
+</div>

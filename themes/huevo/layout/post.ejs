@@ -1,0 +1,81 @@
+<header class="back-logo">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <%- css('css/techomd.css') %>
+    <%- css('css/series.css') %>
+    <link rel="stylesheet" href="//highlightjs.org/static/demo/styles/atom-one-dark.css">
+    <%- css('css/post.css') %>
+    <%- (path === 'about/index.html') ? css('css/about.css') : '' %>
+    <%- partial('_partial/header') %>
+
+    <div id="header-component">
+        <nav class="series-nav-outer">
+            <div class="series-nav">
+                <span class="series-title">
+                    <span class="series-namespace">
+                        <% if (path === 'about/index.html') { %>
+                            关于
+                        <% } else { %>
+                            <a href="/archives/">文章</a>
+                        <% } %>
+                    </span>
+                    <span class="series-name">
+                        <% if (path == 'about/index.html') { %>
+                            我
+                        <% } else if (page.categories.data.length !== 0 && path.indexOf('categories') == -1) { %>
+                            <a href="<%- url_for(page.categories.data[0]['path']) %>">
+                                    <%= page.categories.data[0]['name'] %>
+                                </a>
+                        <% } %>
+                    </span>
+                </span>
+                <span class="column-split">
+                </span>
+                <div class="article-title">
+                    <% const twoPartsTitle = page.title.split('|') %>
+                    <%= twoPartsTitle.length > 1 ? twoPartsTitle[0] : '' %>
+                    <span class="colorful-text"><%= twoPartsTitle.length > 1 ? twoPartsTitle[1] : page.title %></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="article-information-outer">
+            <div class="article-information">
+                <div class="article-information-image normal-image" <%- page.images ? `style="background-image: url('${page.images}')"` : 'style="height:0"' %>></div>
+                <div class="article-information-introduction">
+                    <p class="passage-description">"<%- page.description %>"</p>
+                    <%- page.excerpt %>
+                    <span class="passage-date">
+                        <%= page.date.format('YYYY-MM-Do') %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section id="section-component">
+    <div class="article">
+        <div class="article-content">
+            <%- page.content.split(`\n<a id="more"></a>\n`)[1] %>
+        </div>
+    </div>
+</section>
+
+<div class="comments-outer">
+    <div id="comments"></div>
+</div>
+<script src="/js/series.js"></script>
+<% if (path === 'about/index.html') { %>
+    <script src="https://cdn.bootcss.com/wordcloud2.js/1.1.0/wordcloud2.js"></script>
+    <script src="/js/about.js"></script>
+<% } %>
+<script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<%# <script src='//unpkg.com/valine/dist/Valine.min.js'></script> %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/js/comment.js"></script>
+

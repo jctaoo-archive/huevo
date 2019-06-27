@@ -1,0 +1,41 @@
+<header class="back-logo">
+    <%- css('css/index.css') %>
+    <%- css('css/articles.css') %>
+    <%- css('css/paginator.css') %>
+    <%- partial('_partial/header') %>
+
+    <div id="header-component">
+        <% if (!(path.indexOf('page/') !== -1) && !(path.split('/')[1] >= 2)) { %>
+            <div class="site-information-outer">
+                <div class="site-information">
+                    <div class="liang-zai">
+                        <div class="logo big-logo"></div>
+                        <div class="site-introduction">
+                            <span class="colorful-text">huevo</span><%- __('introduction.first') %> <br>
+                            <%- __('introduction.second') %> <br>
+                            <%- __('introduction.third') %><span class="colorful-text"><%- __('huevo') %></span>
+                        </div>
+                        <h1 class="logo-words colorful-text">Junso's blog</h1>
+                    </div>
+                    <div class="contact-information">
+                        <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple">
+                            <i class="fa fa-github"></i>
+                        </button>
+                        <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                        <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"
+                                onclick="window.location.href = '/rss.xml'">
+                            <i class="fa fa-rss"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</header>
+
+<section id="section-component">
+    <%- partial('_partial/articles') %>
+    <%- partial('_partial/paginator') %>
+</section>

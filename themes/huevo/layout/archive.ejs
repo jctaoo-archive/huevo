@@ -1,0 +1,73 @@
+<header class="back-logo">
+    <%- css('css/series.css') %>
+    <link rel="stylesheet" href="/css/archive.css">
+    <%- partial('_partial/header') %>
+
+    <div id="header-component">
+        <div id="bug"></div>
+        <nav class="series-nav-outer">
+            <div class="series-nav">
+                <span class="series-title">
+                    <span class="series-namespace">
+                        <% if (path.indexOf('categories') != -1) { %>
+                            分类
+                        <% } else { %>
+                            Huevo
+                        <% } %>
+                    </span>
+                    <span class="series-name">
+                        <% if (path.indexOf('categories') != -1) { %>
+                            <% const categoriesArray = path.split('/') %>
+                            <%= categoriesArray[categoriesArray.length - 2] %>
+                        <% } else { %>
+                            <%- __('ArticleList') %>
+                        <% } %>
+                    </span>
+                </span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<section id="section-component">
+    <div class="categories-list-outer">
+        <ul class="categories-list">
+            <% site.categories.sort('length', -1).each(category => { %>
+                <button class="mdui-btn mdui-color-theme-accent mdui-btn-raised mdui-ripple categories-item" onclick="window.location.href = '<%= url_for(category.path) %>'"><%= category.name %> (<%= category.posts.length %>)</button>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="archive-list-outer">
+        <ul class="archive-list">
+            <% page.posts.each(function (post) { %>
+                <li class="archive-item mdui-hoverable mdui-ripple" onclick="window.location.href = '<%= url_for(post.path) %>'">
+                    <span class="top-information">
+                        <span class="basic-information">
+                            <a href="<%- url_for(post.path) %>">
+                                <h1 class="passage-title">
+                                    <%- post.title.replace('|', '') %>
+                                </h1>
+                            </a>
+                            <span class="passage-date">
+                                <% const date = url_for(post.path).split('/').slice(1, 4).join('-') %>
+                                <%= date %>
+                            </span>
+                        </span>
+                        <span class="passage-category">
+                            <% if (post.categories.data.length !== 0 && path.indexOf('categories') == -1) { %>
+                                <a href="<%- url_for(post.categories.data[0]['path']) %>">
+                                    <%= post.categories.data[0]['name'] %>
+                                </a>
+                            <% } %>
+                        </span>
+                    </span>
+                    <span class="passage-description"><%= post.description%></span>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+</section>
+
+<script src="/js/series.js"></script>
+<script src="/js/archive.js"></script>

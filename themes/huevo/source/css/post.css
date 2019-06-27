@@ -1,0 +1,115 @@
+div.article-information-outer {
+    width: 100vw;
+    box-shadow: 0 2px 11px 0 #e0dcdc;
+}
+
+div.article-information {
+    width: 980px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding-top: 49px;
+    padding-bottom: 27px;
+    box-sizing: border-box;
+}
+
+div.article-information div.article-information-image {
+    width: 560px;
+    height: 223px;
+    margin: 0 auto;
+}
+
+div.article-information div.article-information-introduction {
+    font-family: "SF Pro SC", monospace;
+    font-size: 17px;
+    margin-top: 13px;
+    text-indent: 34px;
+    font-weight: 300;
+    border-left: 7px solid rgb(155, 180, 224);
+    border-radius: 7px;
+    padding-left: 13px;
+    box-sizing: border-box;
+    color: rgba(17, 17, 17, 0.65);
+}
+
+div.article-information div.article-information-introduction p.passage-description {
+    text-indent: 0;
+    text-decoration: underline;
+}
+
+div.article-information div.article-information-introduction span.passage-date {
+    height: 14px;
+    margin-left: 17px;
+    color: rgba(91, 91, 91, 0.53);
+}
+
+article.article-information-outer {
+    width: 100vw;
+}
+
+div.article {
+    width: 980px;
+    max-width: 980px;
+    margin: 23px auto;
+    box-sizing: border-box;
+}
+
+div.article div.article-content {
+    width: 100%;
+}
+
+div.article div.article-content code {
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 17px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    box-sizing: border-box;
+    font-family: firacode, monospace;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+div.comments-outer {
+    width: 100vw;
+    margin-top: 39px;
+}
+
+div#comments {
+    width: 980px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+
+    div.article-information {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 93px;
+        box-sizing: border-box;
+    }
+
+    div.article-information div.article-information-image {
+        width: 100%;
+        margin-left: -15px;
+    }
+
+    div.article {
+        width: 100vw;
+        max-width: 100vw;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+    div#comments {
+        width: 100vw;
+        max-width: 100vw;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+}

@@ -1,0 +1,60 @@
+nav.series-nav-outer {
+    z-index: 1;
+    width: 100vw;
+    position: absolute;
+    top: 44px;
+}
+
+div.series-nav {
+    height: 49px;
+    display: flex;
+    align-items: center;
+    width: 980px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+div.series-nav span.series-title {
+    height: 49px;
+    line-height: 49px;
+    font-family: "PingFang SC", serif;
+    /*font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-seri, serif;*/
+    font-size: 24px;
+    /*font-weight: 600;*/
+}
+
+div.series-nav span.series-title span.series-namespace {
+    color: rgba(17, 17, 17, 0.65);
+}
+
+div.series-nav span.series-title span.series-namespace a {
+    color: rgba(17, 17, 17, 0.65);
+}
+
+div.series-nav span.series-title span.series-name {
+    color: rgb(56, 163, 156);
+}
+
+div.series-nav span.series-title span.series-name a {
+    color: rgb(56, 163, 156);
+}
+
+div.series-nav div.article-title {
+    font-family: "SF Pro SC", monospace;
+    font-size: 24px;
+    color: rgba(17, 17, 17, 0.65);
+}
+
+@media only screen and (max-width: 767px) {
+    div.series-nav {
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        height: auto;
+    }
+
+    div.series-nav .column-split {
+        display: none;
+    }
+}

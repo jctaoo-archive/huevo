@@ -1,0 +1,73 @@
+.site-information-outer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.site-information {
+    width: 980px;
+    max-width: 980px;
+    margin: 0 auto;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.liang-zai .big-logo {
+    width: 250px;
+    height: 250px;
+    background-position: center center;
+    margin: 0 auto;
+}
+
+.liang-zai .site-introduction {
+    text-align: center;
+    line-height: 1.5;
+    color: rgba(30, 30, 30, 0.5);
+    margin-top: 27px;
+    margin-bottom: 33px;
+    font-size: 17px;
+}
+
+.liang-zai .site-introduction .colorful-text {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.liang-zai .logo-words {
+    font-size: 96px;
+    text-align: center;
+    margin-top: 0;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.site-information button {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.site-information i.fa {
+    color: #888fe0;
+}
+
+a {
+    color: #9bc4ff;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .site-information {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .liang-zai .logo-words {
+        font-size: 52px;
+    }
+
+}

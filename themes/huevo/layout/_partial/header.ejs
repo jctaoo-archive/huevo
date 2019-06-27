@@ -1,0 +1,36 @@
+<!-- 所有页面都会用到的-start-🍑 -->
+<nav class="main-nav-outer back-logo">
+    <div class="main-nav">
+        <% const pathArray = path.split('/') %>
+        <span class="logo colorful-text" onclick="window.location.href = '/'">
+            <% if (pathArray[0] == 'index.html') { %>
+                Huevo
+            <% } else { %>
+                Junso
+            <% } %>
+        </span>
+        <ul class="main-nav-content">
+            <% for (name in theme.menu) { %>
+            <%  const url = (url_for(theme.menu[name]) == '/' ? '/index.html' : url_for(theme.menu[name])) %>
+            <%  let isActive = (url.indexOf(pathArray[0]) != -1) %>
+            <li class="main-nav-item  <%= isActive ? 'main-nav-item-active' : ''%>" onclick="window.location.href='<%- url %>';">
+                <%- __('Menu.' + name) %>
+            </li>
+            <% } %>
+        </ul>
+        <div class="search-bar">
+            <i class="search-icon">
+            </i>
+            <label>
+                <input type="text" placeholder="<%- __('Search') %>">
+            </label>
+        </div>
+        <div class="mini-menu">
+            <span class="mini-menu-line">
+            </span>
+            <span class="mini-menu-line">
+            </span>
+        </div>
+    </div>
+</nav>
+<!-- 所有页面都会用到的-start-🥭 -->
