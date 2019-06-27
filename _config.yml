@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Junso's huevo
+title: Junso's Huevo
 subtitle:
 description:
 keywords:
 author: Junso
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -39,10 +39,10 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
-  tab_replace: 4
+  tab_replace: 
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: melody
+theme: huevo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -82,3 +82,13 @@ archive_generator:
   yearly: false
   monthly: false
   daily: false
+
+search:
+  path: search.json
+  field: post
+  content: true
+
+feed:
+  type: atom
+  path: rss.xml
+  limit: 20
