@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Junso's Huevo
-subtitle:
+title: Junso's
+subtitle: 我好久没有小步紧跑去迎接一个人的那种快乐了
 description:
-keywords:
+keywords: blog junso technology developer math stydy senior_student
 author: Junso
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://blog.creabt.fun
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: huevo
+theme: indigo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -91,4 +91,24 @@ search:
 feed:
   type: atom
   path: rss.xml
-  limit: 20
+  limit: 
+
+# hexo-generator-json-content
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
